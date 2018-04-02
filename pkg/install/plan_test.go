@@ -25,7 +25,6 @@ func TestWritePlanTemplate(t *testing.T) {
 				StorageNodes:    0,
 				NFSVolumes:      0,
 				AdditionalFiles: 1,
-				AdminPassword:   "password",
 			},
 		},
 		{
@@ -38,7 +37,6 @@ func TestWritePlanTemplate(t *testing.T) {
 				StorageNodes:    2,
 				NFSVolumes:      3,
 				AdditionalFiles: 1,
-				AdminPassword:   "password",
 			},
 		},
 	}
