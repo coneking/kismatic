@@ -8,6 +8,7 @@ import (
 )
 
 const (
+	defaultDBName        = filepath.Join(assetsFolder, "clusterStates.db")
 	defaultPlanName      = "kismatic-cluster.yaml"
 	defaultClusterName   = "kubernetes"
 	defaultGeneratedName = "generated"
@@ -66,4 +67,12 @@ func CheckPlaybookExists(play string) (bool, error) {
 		}
 	}
 	return false, fmt.Errorf("playbook %s not found")
+}
+
+//
+func CreateStoreIfNotExists(path string) error {
+	dbPath = path
+	if len(path) == 0 {
+		dbPath = defaultDBName
+	}
 }
