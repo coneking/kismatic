@@ -11,7 +11,7 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-var clusterNames,clusterPaths []string
+var clusterNames, clusterPaths []string
 var name, path string
 
 var _ = Describe("Mutations", func() {
@@ -40,7 +40,7 @@ var _ = Describe("Mutations", func() {
 		err := cmd.Run()
 		Expect(err).ToNot(HaveOccurred())
 	})
-	AfterEach(func () {
+	AfterEach(func() {
 		cmd := exec.Command("./kismatic", "install", "destroy", name)
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
@@ -58,7 +58,7 @@ The error: %v
 		Expect(err).ToNot(HaveOccurred())
 	})
 	Describe("Attempting to mutate a cluster", func() {
-		Context("by scaling the cluster", func() {
+		Context("by scaling the cluster up", func() {
 			It("should scale up without any overrides", func() {
 				name, clusterNames = clusterNames[0], clusterNames[1:]
 				path, clusterPaths = clusterPaths[0], clusterPaths[1:]
